@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BankAccountCore;
 
 namespace BankAccountForms
 {
@@ -15,6 +16,14 @@ namespace BankAccountForms
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            double initialBalance = Convert.ToDouble(initialbalancetxt.Text);
+            Account acc = new Account(initialBalance);
+
+            MessageBox.Show($"You created an acc with {acc.GetBalanceDisplay()}");
         }
     }
 }
